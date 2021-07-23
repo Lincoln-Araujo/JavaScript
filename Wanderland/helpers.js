@@ -9,7 +9,7 @@ const createVenueHTML = (name, location, iconSource) => {
   <p>${location.country}</p>`;
 }
 
-// creating a wheather model to print on website
+// creating a forecast model to print on website
 const createWeatherHTML = (currentDay) => {
   console.log(currentDay)
   return `<h2>${weekDays[(new Date()).getDay()]}</h2>
