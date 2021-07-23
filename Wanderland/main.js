@@ -1,9 +1,9 @@
-// Foursquare API Info
+// Foursquare API Info to get access to venues in a researched place.
 const clientId = '2MKWSLC0CYSPVLBQAKTRET313YGMBCKMWRP1VCDYENCLGWT2';
 const clientSecret = 'DRNOXOR5P4LBEI10GIWX0KCKN5ABUKUAMFNOAXBM5DDRXIXN';
 const url = 'https://api.foursquare.com/v2/venues/explore?near=';
 
-// OpenWeather Info
+// OpenWeather Info to get access to forecast in a researched place.
 const openWeatherKey = 'ad21aa0e93281234d77fe50bb70510f6';
 const weatherUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
@@ -17,9 +17,10 @@ const $weatherDiv = $("#weather1");
 const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 //  AJAX functions 
+//  Asynchronous JavaScript and XML - it's a kind of function that allow us to load data from a server without being necessary to refresh the current page.  
+//  Using Promises, we can get data from Foursquare API and return the result if the user gives a correct input.
 
-// Getting venues with an async function
-const getVenues = async () => {
+const getVenues = async () => {.
   const city = $input.val();
   const urlToFetch = `${url}${city}&limit=10&client_id=${clientId}&client_secret=${clientSecret}&v=20210701`;
   try {
@@ -35,7 +36,7 @@ const getVenues = async () => {
   }
 }
 
-// Getting forecast
+// Getting forecast with another promise
 const getForecast = async () => {
   const urlToFetch = `${weatherUrl}?&q=${$input.val()}&APPID=${openWeatherKey}`;
   try {
@@ -53,6 +54,7 @@ const getForecast = async () => {
 // Render functions
 
 // Using a random value as index to sort differents venues
+// This will show different venues every time the user click on the submit button
 const renderVenues = (venues) => {
   $venueDivs.forEach(($venue) => {
     let randomVenue = Math.floor(Math.random() * venues.length);
