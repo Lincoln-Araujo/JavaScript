@@ -42,4 +42,3 @@ for (food of shoppingList) {
   - potatoes
   - lettuce  
 */
-
