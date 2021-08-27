@@ -21,3 +21,4 @@ const dinner = [{name: 'hamburger', source: 'meat'},
 
 console.log(isTheDinnerVegan(dinner))
 // Should print false
+
