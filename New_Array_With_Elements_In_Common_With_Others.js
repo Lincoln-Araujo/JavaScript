@@ -13,3 +13,4 @@ const myStuff = [ 'rules', 'fruit-by-the-foot', 'wedgies', 'sweaters', 'skateboa
 
 console.log(returningNewArray(myStuff, coolStuff))
 // Should print [ 'fruit-by-the-foot', 'skateboards', 'my room' ]
+
