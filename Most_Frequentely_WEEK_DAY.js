@@ -1,14 +1,11 @@
 function mostFrequentDays(year = new Date().getFullYear()) {
+  let dayName = d => d.toLocaleString('en',{weekday:'long'});
   // 1 Jan
-  let d = new Date(year, 0);
-  // Weekday name for 1 Jan
-  let mostFrequent = [d.toLocaleString('en',{weekday:'long'})];
-  let isLeap = new Date(year, 1, 29).getDate() == 29;
-  // If leap year, add next day's name too
-  if (isLeap) {
-    d.setDate(d.getDate() + 1);
-    mostFrequent.push(d.toLocaleString('en',{weekday:'long'}))
-  }
-
-  return mostFrequent;
+  let d = new Date(year, 0, 1);
+  let dayZero = dayName(d);
+  // 31 Dec
+  let dayOne = dayName(new Date(year, 11, 31));
+  let result = dayZero == dayOne? [dayZero] : [dayZero, dayOne];
+  // If d0 is Sunday, reverse result
+  return d.getDay()? result : result.reverse();
 };
