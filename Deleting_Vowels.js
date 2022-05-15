@@ -20,3 +20,12 @@ function disemvowel(str) {
 
 console.log(disemvowel("hI my name is jon"));
 // the result will be: 'h my nm s jn'
+
+// this function can work too
+
+function disemvowel(str) {
+  return str.replace(/[aeiou]/gi, '');
+}
+
+console.log(disemvowel("hI my name is jon"));
+// the result will be: 'h my nm s jn'
